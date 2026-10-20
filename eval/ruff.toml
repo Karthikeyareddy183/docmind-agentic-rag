@@ -1,0 +1,9 @@
+# Offline evaluation scripts: same rules as the backend, minus a few that don't fit scripts
+extend = "../backend/pyproject.toml"
+
+[lint]
+extend-ignore = [
+    "E501",      # long report strings / table rows
+    "ASYNC240",  # scripts read local files inside asyncio.run()
+    "S311",      # random is used for synthetic data, not security
+]

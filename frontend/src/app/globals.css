@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dbe6fe;
+  --color-brand-500: #3b6fe0;
+  --color-brand-600: #2d5bc4;
+  --color-brand-700: #24489c;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #f6f7f9;
+  color: #0f172a;
+}
+
+/* Answer markdown */
+.prose-answer p {
+  margin: 0.35rem 0;
+  line-height: 1.6;
+}
+.prose-answer ul,
+.prose-answer ol {
+  margin: 0.4rem 0;
+  padding-left: 1.25rem;
+}
+.prose-answer ul {
+  list-style: disc;
+}
+.prose-answer ol {
+  list-style: decimal;
+}
+.prose-answer li {
+  margin: 0.15rem 0;
+}
+.prose-answer table {
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+.prose-answer th,
+.prose-answer td {
+  border: 1px solid #e2e8f0;
+  padding: 0.25rem 0.5rem;
+}
+.prose-answer code {
+  background: #f1f5f9;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  font-size: 0.85em;
+}
+
+@keyframes pulse-bar {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.caret::after {
+  content: "▍";
+  margin-left: 1px;
+  animation: pulse-bar 1s infinite;
+  color: var(--color-brand-500);
+}
+
+/* Citation highlight drawn over the PDF page */
+.cite-highlight {
+  position: absolute;
+  background: rgba(250, 204, 21, 0.28);
+  outline: 2px solid rgba(234, 179, 8, 0.85);
+  border-radius: 3px;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}

@@ -1,0 +1,60 @@
+[
+  {
+    "keyword_weight": 0.0,
+    "reranker": null,
+    "recall@1": 0.8181818181818182,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8833333333333333,
+    "rerank_ms": 0.0
+  },
+  {
+    "keyword_weight": 0.25,
+    "reranker": null,
+    "recall@1": 0.8181818181818182,
+    "recall@3": 0.9772727272727273,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8901515151515151,
+    "rerank_ms": 0.0
+  },
+  {
+    "keyword_weight": 0.5,
+    "reranker": null,
+    "recall@1": 0.75,
+    "recall@3": 0.9772727272727273,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8598484848484849,
+    "rerank_ms": 0.0
+  },
+  {
+    "keyword_weight": 1.0,
+    "reranker": null,
+    "recall@1": 0.75,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9545454545454546,
+    "mrr@10": 0.8484848484848485,
+    "rerank_ms": 0.0
+  },
+  {
+    "keyword_weight": 0.25,
+    "reranker": "BAAI/bge-reranker-base",
+    "depth": 8,
+    "max_len": 256,
+    "recall@1": 0.7727272727272727,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8643939393939394,
+    "rerank_ms": 2699.3287499999497
+  },
+  {
+    "keyword_weight": 0.5,
+    "reranker": "BAAI/bge-reranker-base",
+    "depth": 8,
+    "max_len": 256,
+    "recall@1": 0.7727272727272727,
+    "recall@3": 0.9318181818181818,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8625,
+    "rerank_ms": 2638.8857000001735
+  }
+]

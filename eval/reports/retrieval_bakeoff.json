@@ -1,0 +1,253 @@
+[
+  {
+    "embedder": "local:BAAI/bge-small-en-v1.5",
+    "strategy": "dense",
+    "reranker": null,
+    "recall@1": 0.6136363636363636,
+    "recall@3": 0.7954545454545454,
+    "recall@5": 0.8409090909090909,
+    "mrr@10": 0.7134469696969697,
+    "query_ms": 100.14589999991586,
+    "index_s": 4.386206200000061,
+    "load_s": 7.705155999999988,
+    "dim": 384,
+    "misses": [
+      "q01",
+      "q12",
+      "q16",
+      "q20",
+      "q23",
+      "q24",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "\u2014",
+    "strategy": "keyword",
+    "reranker": null,
+    "recall@1": 0.6363636363636364,
+    "recall@3": 0.7727272727272727,
+    "recall@5": 0.9090909090909091,
+    "mrr@10": 0.7373737373737373,
+    "query_ms": 0.0,
+    "index_s": 0.0,
+    "load_s": 7.705155999999988,
+    "dim": 0,
+    "misses": [
+      "q02",
+      "q23",
+      "q26",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:BAAI/bge-small-en-v1.5",
+    "strategy": "hybrid",
+    "reranker": null,
+    "recall@1": 0.6363636363636364,
+    "recall@3": 0.8863636363636364,
+    "recall@5": 0.9318181818181818,
+    "mrr@10": 0.7668560606060606,
+    "query_ms": 100.14589999991586,
+    "index_s": 4.386206200000061,
+    "load_s": 7.705155999999988,
+    "dim": 384,
+    "misses": [
+      "q02",
+      "q17",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:BAAI/bge-base-en-v1.5",
+    "strategy": "dense",
+    "reranker": null,
+    "recall@1": 0.6818181818181818,
+    "recall@3": 0.9090909090909091,
+    "recall@5": 0.9318181818181818,
+    "mrr@10": 0.7924242424242425,
+    "query_ms": 88.50014999995892,
+    "index_s": 21.665965300000153,
+    "load_s": 6.131660799999963,
+    "dim": 768,
+    "misses": [
+      "q20",
+      "q24",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:BAAI/bge-base-en-v1.5",
+    "strategy": "hybrid",
+    "reranker": null,
+    "recall@1": 0.7272727272727273,
+    "recall@3": 0.9090909090909091,
+    "recall@5": 0.9318181818181818,
+    "mrr@10": 0.8220598845598845,
+    "query_ms": 88.50014999995892,
+    "index_s": 21.665965300000153,
+    "load_s": 6.131660799999963,
+    "dim": 768,
+    "misses": [
+      "q02",
+      "q17",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:BAAI/bge-m3",
+    "strategy": "dense",
+    "reranker": null,
+    "recall@1": 0.8181818181818182,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8833333333333333,
+    "query_ms": 371.6623500000651,
+    "index_s": 59.23986250000007,
+    "load_s": 11.10171460000015,
+    "dim": 1024,
+    "misses": [
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:BAAI/bge-m3",
+    "strategy": "hybrid",
+    "reranker": null,
+    "recall@1": 0.75,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9545454545454546,
+    "mrr@10": 0.8484848484848485,
+    "query_ms": 371.6623500000651,
+    "index_s": 59.23986250000007,
+    "load_s": 11.10171460000015,
+    "dim": 1024,
+    "misses": [
+      "q02",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:Qwen/Qwen3-Embedding-0.6B",
+    "strategy": "dense",
+    "reranker": null,
+    "recall@1": 0.7045454545454546,
+    "recall@3": 0.8636363636363636,
+    "recall@5": 0.9545454545454546,
+    "mrr@10": 0.7931818181818182,
+    "query_ms": 1583.5688499998923,
+    "index_s": 679.2237300000002,
+    "load_s": 49.18631800000003,
+    "dim": 1024,
+    "misses": [
+      "q14",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:Qwen/Qwen3-Embedding-0.6B",
+    "strategy": "hybrid",
+    "reranker": null,
+    "recall@1": 0.7727272727272727,
+    "recall@3": 0.9318181818181818,
+    "recall@5": 0.9318181818181818,
+    "mrr@10": 0.8522727272727273,
+    "query_ms": 1583.5688499998923,
+    "index_s": 679.2237300000002,
+    "load_s": 49.18631800000003,
+    "dim": 1024,
+    "misses": [
+      "q02",
+      "q17",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "litellm:gemini/gemini-embedding-001",
+    "strategy": "dense",
+    "reranker": null,
+    "recall@1": 0.8409090909090909,
+    "recall@3": 0.9318181818181818,
+    "recall@5": 0.9545454545454546,
+    "mrr@10": 0.8958333333333334,
+    "query_ms": 426.9502000001921,
+    "index_s": 3.978071799999725,
+    "load_s": 0.0012163999999756925,
+    "dim": 1024,
+    "misses": [
+      "q46",
+      "q47"
+    ]
+  },
+  {
+    "embedder": "litellm:gemini/gemini-embedding-001",
+    "strategy": "hybrid",
+    "reranker": null,
+    "recall@1": 0.7272727272727273,
+    "recall@3": 0.9318181818181818,
+    "recall@5": 0.9545454545454546,
+    "mrr@10": 0.834280303030303,
+    "query_ms": 426.9502000001921,
+    "index_s": 3.978071799999725,
+    "load_s": 0.0012163999999756925,
+    "dim": 1024,
+    "misses": [
+      "q02",
+      "q46"
+    ]
+  },
+  {
+    "embedder": "local:Qwen/Qwen3-Embedding-0.6B",
+    "strategy": "hybrid+rerank",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "recall@1": 0.6363636363636364,
+    "recall@3": 0.8409090909090909,
+    "recall@5": 0.9090909090909091,
+    "mrr@10": 0.7432359307359307,
+    "query_ms": 2648.1194499999674,
+    "rerank_ms": 1064.550600000075,
+    "index_s": 679.2237300000002,
+    "load_s": 49.18631800000003,
+    "dim": 1024,
+    "misses": [
+      "q01",
+      "q16",
+      "q46",
+      "q47"
+    ]
+  },
+  {
+    "embedder": "local:Qwen/Qwen3-Embedding-0.6B",
+    "strategy": "hybrid+rerank",
+    "reranker": "BAAI/bge-reranker-base",
+    "recall@1": 0.7954545454545454,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.884469696969697,
+    "query_ms": 8397.248450000006,
+    "rerank_ms": 6813.679600000114,
+    "index_s": 679.2237300000002,
+    "load_s": 49.18631800000003,
+    "dim": 1024,
+    "misses": [
+      "q17"
+    ]
+  },
+  {
+    "embedder": "local:Qwen/Qwen3-Embedding-0.6B",
+    "strategy": "hybrid+rerank",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "recall@1": 0.75,
+    "recall@3": 0.9545454545454546,
+    "recall@5": 0.9772727272727273,
+    "mrr@10": 0.8568181818181818,
+    "query_ms": 31595.709249999803,
+    "rerank_ms": 30012.14039999991,
+    "index_s": 679.2237300000002,
+    "load_s": 49.18631800000003,
+    "dim": 1024,
+    "misses": [
+      "q17"
+    ]
+  }
+]

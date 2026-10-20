@@ -1,0 +1,4365 @@
+{
+  "naive": {
+    "config": {
+      "retrieval_mode": "dense",
+      "agent_mode": "single"
+    },
+    "summary": {
+      "questions": 47,
+      "errors": 0,
+      "accuracy": 97.87234042553192,
+      "judge_accuracy": 100.0,
+      "answerable_accuracy": 97.72727272727273,
+      "retrieval_hit_rate": 95.45454545454545,
+      "groundedness": 100.0,
+      "abstention_accuracy": 100.0,
+      "false_abstention_rate": 2.272727272727273,
+      "accuracy_by_type": {
+        "calc": 100.0,
+        "figure": 100.0,
+        "multi": 100.0,
+        "ocr": 100.0,
+        "table": 100.0,
+        "text": 95.45454545454545
+      },
+      "latency_p50_s": 2.558947600000465,
+      "latency_p95_s": 3.5464874999997846,
+      "avg_tokens": 1622.8936170212767,
+      "avg_llm_calls": 1,
+      "cost_per_query_usd": 0.00021623404255319148,
+      "mean_confidence_correct": 0.6586976744186046,
+      "mean_confidence_wrong": 0.624
+    },
+    "rows": [
+      {
+        "id": "q01",
+        "type": "text",
+        "question": "What was Northwind's total revenue in FY2025?",
+        "answer": "Northwind's total revenue in FY2025 was **$482.6 million**, up 18% year over year [S1]. The segment table confirms the same figure: Cloud Platform $233.6M, Data Services $135.4M, and Consulting $113.6M, totaling $482.6M [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states Northwind's total revenue and growth rate for FY2025, which matches the reference and is supported by S1 and S2.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.687,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 32988.61249999936,
+        "tokens": 1890,
+        "cost_usd": 0.000256,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q02",
+        "type": "text",
+        "question": "Who is the CEO of Northwind Analytics?",
+        "answer": "The CEO of Northwind Analytics is **Meera Iyer**. Her name is signed as Chief Executive Officer on the FY2025 and FY2024 annual report letters [S1, S2].\n\nRahul Menon is the CEO of Southwind Analytics, a different company [S4].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identifies Meera Iyer as the CEO of Northwind Analytics, which is supported by the provided passages [S1, S2].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.63,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "southwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 3527.8846000001067,
+        "tokens": 1573,
+        "cost_usd": 0.000261,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q03",
+        "type": "text",
+        "question": "In which year was Northwind Analytics founded and where is it headquartered?",
+        "answer": "Northwind Analytics was founded in 2011 and is headquartered in Pune, India. [S1] The FY2024 report says the same. [S2]\n\nNote: [S3] describes \"Southwind Analytics,\" a different company headquartered in Hyderabad and founded in 2014, so it does not apply to Northwind.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the founding year and headquarters from the provided sources.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.62,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "southwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2592.8098000003956,
+        "tokens": 1795,
+        "cost_usd": 0.000221,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q04",
+        "type": "text",
+        "question": "What was Northwind's enterprise net retention in FY2025?",
+        "answer": "Northwind's enterprise net retention in FY2025 was 124% [S1]. The Southwind Analytics report shows 109% for its own FY2025, but that is a different company, so I have not used it [S3].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the net retention and grounds it in the provided passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.695,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "southwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2424.301499999274,
+        "tokens": 1580,
+        "cost_usd": 0.000186,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q05",
+        "type": "text",
+        "question": "How many new enterprise accounts did Northwind sign in FY2025?",
+        "answer": "Northwind signed 61 new enterprise accounts in FY2025 [S1]. This is from the Northwind Analytics Annual Report FY2025, page 1 (CEO letter). Southwind Analytics' figure of 33 in its own FY2025 report [S3] refers to a different company and is not relevant here.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the number of new enterprise accounts based on the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.637,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "southwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2389.4426000006206,
+        "tokens": 1691,
+        "cost_usd": 0.000211,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q06",
+        "type": "text",
+        "question": "What new capability did Northwind's Cloud Platform launch in the third quarter of FY2025?",
+        "answer": "According to the FY2025 annual report, the Cloud Platform segment launched real-time streaming ingestion in the third quarter [S1].\n\nNote that the FY2024 report mentions a different Cloud Platform launch, multi-region failover, but in the second quarter of that year, not FY2025 [S4].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the new capability launched in Q3 FY2025 and is fully supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.708,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p2",
+          "northwind_annual_report_fy2024.pdf p2"
+        ],
+        "latency_ms": 2515.5576999986806,
+        "tokens": 1755,
+        "cost_usd": 0.000215,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q07",
+        "type": "text",
+        "question": "What was the average utilisation of Northwind's billable consultants in FY2025?",
+        "answer": "Northwind's billable consultants averaged 78% utilisation in FY2025 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the average utilisation as 78% for FY2025, which matches the reference answer and is directly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.711,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p2"
+        ],
+        "latency_ms": 2213.509299999714,
+        "tokens": 1716,
+        "cost_usd": 0.000184,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q08",
+        "type": "table",
+        "question": "What was Northwind's Data Services revenue in Q3 FY2025?",
+        "answer": "Northwind's Data Services revenue in Q3 FY2025 was $34.7 million [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the Data Services revenue for Q3 FY2025, which matches the reference answer and is directly supported by the provided table in [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.686,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2281.6834000004746,
+        "tokens": 1954,
+        "cost_usd": 0.000209,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q09",
+        "type": "table",
+        "question": "How much revenue did Northwind's Cloud Platform segment generate in FY2025?",
+        "answer": "Northwind's Cloud Platform segment generated **$233.6 million** in FY2025 [S1]. The quarterly figures (Q1 52.4, Q2 56.1, Q3 60.3, Q4 64.8) sum to that total [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the revenue figure for the Cloud Platform segment in FY2025 and cited the supporting passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.71,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2733.874300000025,
+        "tokens": 2092,
+        "cost_usd": 0.000277,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q10",
+        "type": "table",
+        "question": "What was Northwind's total revenue in the fourth quarter of FY2025?",
+        "answer": "Northwind's total revenue in Q4 FY2025 was **US$130.9 million** [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified and extracted the total revenue for Q4 FY2025 from the provided table, matching the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.691,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2572.4974000004295,
+        "tokens": 1760,
+        "cost_usd": 0.000211,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q11",
+        "type": "calc",
+        "question": "What percentage of Northwind's FY2025 revenue came from the Cloud Platform?",
+        "answer": "Cloud Platform contributed about **48.4%** of Northwind's FY2025 revenue. It generated $233.6 million out of a total of $482.6 million [S3], and the total matches the CEO letter's $482.6 million [S2]. This is my calculation from those figures (233.6 \u00f7 482.6), not a value stated in the sources.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the percentage and the source values for its calculation, which are present in the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.559,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3",
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 3546.4874999997846,
+        "tokens": 2236,
+        "cost_usd": 0.000345,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q12",
+        "type": "calc",
+        "question": "By how much did Northwind's Consulting revenue grow from Q1 to Q4 of FY2025?",
+        "answer": "Northwind's Consulting revenue grew by **$2.6 million** from Q1 to Q4 of FY2025, rising from $27.0 million to $29.6 million [S1]. That is about a 9.6% increase over the Q1 level (2.6 / 27.0).",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the growth in consulting revenue, the starting and ending amounts, and the percentage increase, all of which are supported by the provided table.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.598,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2937.953299999208,
+        "tokens": 1903,
+        "cost_usd": 0.000279,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q13",
+        "type": "calc",
+        "question": "What was the average quarterly revenue of Northwind's Data Services in FY2025?",
+        "answer": "Northwind's Data Services averaged **US$33.85 million per quarter** in FY2025. The quarterly figures were 31.2, 33.0, 34.7, and 36.5, which sum to the reported FY2025 total of 135.4, so 135.4 \u00f7 4 = 33.85 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly calculates the average quarterly revenue for Northwind's Data Services in FY2025 and all figures are supported by the provided table.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.605,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 3084.8863999999594,
+        "tokens": 2486,
+        "cost_usd": 0.000377,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q14",
+        "type": "figure",
+        "question": "What was Northwind's operating margin in 2023?",
+        "answer": "Northwind's operating margin in 2023 was **15.1%** [S1, S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies Northwind's operating margin in 2023 as 15.1%, which aligns with the reference answer and is supported by both provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.672,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p4",
+          "northwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 2363.3092000000033,
+        "tokens": 2125,
+        "cost_usd": 0.000254,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q15",
+        "type": "figure",
+        "question": "How did Northwind's operating margin change from 2021 to 2025?",
+        "answer": "Northwind's operating margin rose from 11.2% in 2021 to 19.4% in 2025, an increase of 8.2 percentage points [S1]. The 2021 value of 11.2% is confirmed by the FY2024 report [S2], and the FY2025 report describes growth in each consecutive year [S1].\n\nThe Southwind and Eastwind reports [S4, S5] cover different companies, so I did not use them.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the operating margin increased from 11.2% in 2021 to 19.4% in 2025, and this information is supported by S1 and S2.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.691,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4",
+          "southwind_annual_report_fy2025.pdf p4",
+          "eastwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 3193.3642999993026,
+        "tokens": 2471,
+        "cost_usd": 0.000378,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q16",
+        "type": "figure",
+        "question": "What share of Northwind's FY2025 revenue came from North America?",
+        "answer": "Northwind's North America share of FY2025 revenue was **34%**, according to the FY2025 annual report's geographic mix pie chart [S2].\n\nThe FY2024 report shows North America at 35% [S3], but that is a prior-year figure. The Southwind Analytics report [S5] is a different company, so I excluded it.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified and stated the share of Northwind's FY2025 revenue from North America as 34% based on the provided source [S2].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.681,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4",
+          "southwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 3210.7899000002362,
+        "tokens": 1727,
+        "cost_usd": 0.000265,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q17",
+        "type": "figure",
+        "question": "Which region contributed the most to Northwind's revenue in FY2025?",
+        "answer": "The sources do not contain a FY2025 regional breakdown for Northwind Analytics. The only FY2025 regional figures, in [S4], are for \"Southwind Analytics,\" a different company, so I can't use them.\n\nFor Northwind's FY2024 report, the pie chart shows India at 36% as the largest region, followed by North America at 35% [S2]. That is FY2024 data, not FY2025.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified that the requested FY2025 data for Northwind Analytics was not available and correctly referenced the provided FY2024 data for Northwind and FY2025 data for Southwind Analytics.",
+        "retrieval_hit": false,
+        "abstained": false,
+        "confidence": 0.568,
+        "verified": null,
+        "citations": [
+          "southwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4"
+        ],
+        "latency_ms": 3609.177100001034,
+        "tokens": 2080,
+        "cost_usd": 0.000327,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q18",
+        "type": "text",
+        "question": "By how much did Northwind reduce carbon emissions in FY2025, and against which baseline?",
+        "answer": "Northwind reduced absolute carbon emissions by 22% in FY2025, measured against a 2023 baseline [S1].\n\nNote that the FY2024 Northwind report cites a 2022 baseline for its 9% reduction [S2], and the Southwind and Eastwind reports are different companies, so they are not relevant to Northwind's figure [S3, S4].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the carbon emission reduction and baseline, and the additional context is also supported by the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.699,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5",
+          "northwind_annual_report_fy2024.pdf p5",
+          "southwind_annual_report_fy2025.pdf p5",
+          "eastwind_annual_report_fy2025.pdf p5"
+        ],
+        "latency_ms": 2558.947600000465,
+        "tokens": 1492,
+        "cost_usd": 0.000198,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q19",
+        "type": "text",
+        "question": "What was Northwind's voluntary attrition in FY2025, and what was it the year before?",
+        "answer": "Northwind's voluntary attrition was **13.1% in FY2025**, improved from **16.4% in the prior year (FY2024)** [S1]. The FY2024 report also gives 16.4% for that year [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the voluntary attrition rates for both years and accurately attributed them to the provided sources.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.65,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5",
+          "northwind_annual_report_fy2024.pdf p5"
+        ],
+        "latency_ms": 2891.354199999114,
+        "tokens": 1372,
+        "cost_usd": 0.000208,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q20",
+        "type": "text",
+        "question": "What share of Northwind's FY2025 revenue came from its top ten customers?",
+        "answer": "The sources do not contain Northwind's FY2025 top-ten customer share. The only Northwind figure is 29%, but it comes from the FY2024 annual report, not FY2025 [S1]. The 35% and 22% figures belong to Southwind Analytics and Eastwind Data Systems, which are different companies [S2, S4].",
+        "correct": false,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified that the specific information for FY2025 for Northwind was not present in the sources, and correctly cited the sources for the provided figures.",
+        "retrieval_hit": false,
+        "abstained": true,
+        "confidence": 0.624,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p5",
+          "southwind_annual_report_fy2025.pdf p5",
+          "eastwind_annual_report_fy2025.pdf p5"
+        ],
+        "latency_ms": 3050.4681000002165,
+        "tokens": 1433,
+        "cost_usd": 0.000254,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q21",
+        "type": "text",
+        "question": "What is Northwind's revenue guidance for FY2026?",
+        "answer": "Northwind's FY2026 revenue guidance is between $560 million and $580 million [S1]. The same outlook also plans capital expenditure of $41 million and a Singapore office opening in the second quarter of FY2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the revenue guidance for FY2026, which matches the reference answer and is fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.666,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p6"
+        ],
+        "latency_ms": 2341.7949000013323,
+        "tokens": 1802,
+        "cost_usd": 0.000211,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q22",
+        "type": "text",
+        "question": "Where does Northwind plan to open a new office in FY2026, and when?",
+        "answer": "Northwind plans to open a Singapore office in the second quarter of FY2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states Northwind plans to open a new office in Singapore during the second quarter of FY2026, which aligns with the reference answer and is directly supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.672,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p6"
+        ],
+        "latency_ms": 2287.5263999994786,
+        "tokens": 1179,
+        "cost_usd": 0.000131,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q23",
+        "type": "table",
+        "question": "How many people worked in Engineering at Northwind at the end of FY2025?",
+        "answer": "At the end of FY2025, Northwind Analytics had **1,120 people** in Engineering [S1]. This matches the company's total of 2,340 employees for that year [S1, S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the number of people in Engineering from S1 and the total number of employees from S2, matching the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.68,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7",
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2785.0376999995206,
+        "tokens": 1661,
+        "cost_usd": 0.000217,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q24",
+        "type": "calc",
+        "question": "What fraction of Northwind's FY2025 employees were in Sales & Marketing?",
+        "answer": "Sales & Marketing had 410 of Northwind's 2,340 employees in FY2025 [S3], [S1]. That is 410/2,340 = 41/234, or about 17.5%.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the number of employees in Sales & Marketing and the total number of employees, then accurately calculated the percentage, matching the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.574,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7",
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 3009.133900000961,
+        "tokens": 1842,
+        "cost_usd": 0.000276,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q25",
+        "type": "ocr",
+        "question": "What final dividend did Northwind's board approve for FY2025?",
+        "answer": "The Board approved a final dividend of **Rs 4.50 per equity share** for fiscal year 2025, payable on 30 April 2026 [S1].\n\nThe December 2025 minutes mention a separate interim dividend of Rs 3.75 per equity share, which is not the final dividend [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the final dividend amount and payment date, which matches the reference answer and is directly supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.706,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1",
+          "northwind_board_minutes_dec2025.pdf p1"
+        ],
+        "latency_ms": 2643.7402999999904,
+        "tokens": 1705,
+        "cost_usd": 0.00024,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q26",
+        "type": "ocr",
+        "question": "Which company is Northwind acquiring and for how much?",
+        "answer": "Northwind is acquiring DataLoom Technologies for a total consideration of USD 28 million, subject to regulatory approval. Closing is expected in Q1 FY2027 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately identifies the company and the acquisition amount, which directly matches the reference answer and is fully supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.555,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2306.5363000005163,
+        "tokens": 1909,
+        "cost_usd": 0.000216,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q27",
+        "type": "ocr",
+        "question": "How many directors attended the March 2026 board meeting?",
+        "answer": "**9 directors** were present at the March 2026 board meeting (14 March 2026, Pune headquarters), including the Chair, Arvind Rao [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the number of directors present from the provided text.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.625,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2365.349100000458,
+        "tokens": 1118,
+        "cost_usd": 0.000158,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q28",
+        "type": "ocr",
+        "question": "Who was appointed CFO and from what date?",
+        "answer": "Priya Natarajan was appointed Chief Financial Officer, effective 1 April 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately extracts the CFO's name and effective date from the provided citation, matching the key facts in the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.617,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 2160.0562000003265,
+        "tokens": 1278,
+        "cost_usd": 0.000143,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q29",
+        "type": "ocr",
+        "question": "According to the March 2026 board minutes, when is the next board meeting?",
+        "answer": "According to the March 2026 board minutes, the next Board meeting will be held on 12 June 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer directly states the correct date for the next board meeting, which is fully supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.655,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 2271.170499998334,
+        "tokens": 1046,
+        "cost_usd": 0.00012,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q30",
+        "type": "ocr",
+        "question": "What did the February 2026 penetration test find, according to the board minutes?",
+        "answer": "According to the March 2026 board minutes, the February 2026 external penetration test reported zero critical findings [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states there were zero critical findings and accurately cites the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.657,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 2203.235599999971,
+        "tokens": 1046,
+        "cost_usd": 0.00012,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q31",
+        "type": "ocr",
+        "question": "What is the total amount due on invoice INV-2026-0457?",
+        "answer": "The total amount due on invoice INV-2026-0457 is **15,316.40** [S1]. This is the subtotal of 12,980.00 plus GST at 18% of 2,336.40 [S1]. The invoice is due by 15 November 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly states the total amount due as 15,316.40 USD, which is directly supported by the provided invoice, including the breakdown of subtotal and GST.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.678,
+        "verified": null,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 2800.4873000008956,
+        "tokens": 1287,
+        "cost_usd": 0.000204,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q32",
+        "type": "ocr",
+        "question": "When is payment due for the Acme Retail invoice?",
+        "answer": "The payment for the Acme Retail invoice (INV-2026-0457, total due USD 15,316.40) is due by **15 November 2026** [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the due date as 15 November 2026, which is directly stated in the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.662,
+        "verified": null,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 2432.594899999458,
+        "tokens": 1333,
+        "cost_usd": 0.000181,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q33",
+        "type": "ocr",
+        "question": "How much GST was charged on the invoice?",
+        "answer": "The GST charged was **2,336.40** (GST at 18% on a subtotal of 12,980.00), for a total due of 15,316.40 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the GST amount and percentage, which matches the reference answer and is directly supported by the provided invoice.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.659,
+        "verified": null,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 2926.7190000009577,
+        "tokens": 1806,
+        "cost_usd": 0.000253,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q34",
+        "type": "text",
+        "question": "How many days of paid annual leave do employees get?",
+        "answer": "Full-time employees receive 24 days of paid annual leave per calendar year, accrued monthly, with a maximum of 10 unused days that can be carried forward to the next year [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately reflects the key facts in the reference answer and is fully supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.708,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2230.5221000005986,
+        "tokens": 1270,
+        "cost_usd": 0.000151,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q35",
+        "type": "text",
+        "question": "How many unused leave days can be carried forward?",
+        "answer": "A maximum of 10 unused annual leave days can be carried forward to the next year [S1]. This applies to full-time employees, whose 24 days of paid annual leave accrue monthly [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states that a maximum of 10 unused leave days can be carried forward, which matches the reference answer and is directly supported by [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.694,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2306.8690999989485,
+        "tokens": 1273,
+        "cost_usd": 0.000153,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q36",
+        "type": "text",
+        "question": "How many days a week can I work from home?",
+        "answer": "You can work remotely up to **three days per week**, but you need your manager's approval [S1]. Fully remote arrangements require approval from your department head and HR [S1].\n\nThe contractor policy only sets remote access hours (07:00 to 22:00 IST, via the contractor VPN) and does not address days per week [S4]. If you're a contractor, check with your sponsoring manager.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the number of remote work days and manager approval requirement based on S1, and correctly identifies that contractor policy (S4) does not address days per week.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.613,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p1",
+          "northwind_contractor_it_policy.pdf p1"
+        ],
+        "latency_ms": 3414.7871999994095,
+        "tokens": 1353,
+        "cost_usd": 0.000231,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q37",
+        "type": "text",
+        "question": "What is the notice period after confirmation, and during probation?",
+        "answer": "During probation, the notice period is 15 days, and after confirmation it is 60 days for all roles [S1]. New employees serve a six-month probation period before confirmation [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly provides the notice periods during probation and after confirmation, matching the reference answer and being fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.709,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p1"
+        ],
+        "latency_ms": 2373.9444999991974,
+        "tokens": 1140,
+        "cost_usd": 0.000137,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q38",
+        "type": "text",
+        "question": "What is the daily meal allowance on business trips?",
+        "answer": "The meal allowance during business travel is capped at Rs 1,500 per day [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the daily meal allowance of Rs 1,500 per day, which matches the reference answer and is directly supported by citation [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.708,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2384.591100000762,
+        "tokens": 1441,
+        "cost_usd": 0.000172,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q39",
+        "type": "text",
+        "question": "How long is parental leave for primary and secondary caregivers?",
+        "answer": "Primary caregivers are entitled to 26 weeks of paid parental leave, and secondary caregivers are entitled to 4 weeks [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the parental leave durations for both primary and secondary caregivers, matching the reference answer and being directly supported by the cited passage S1.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.687,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 3303.309299999455,
+        "tokens": 1247,
+        "cost_usd": 0.000145,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q40",
+        "type": "text",
+        "question": "Under the employee handbook, how often must passwords be changed, and what is the minimum length?",
+        "answer": "Under the Employee Handbook, passwords must be at least **14 characters** long and are **rotated every 90 days** [S1].\n\nThe Contractor IT Access Policy sets different rules: 16 characters minimum and rotation every 60 days [S2]. These do not apply to employees under the handbook.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the password requirements for employees (14 characters, 90 days) and distinguishes them from contractor requirements, all of which are supported by the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.629,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p3",
+          "northwind_contractor_it_policy.pdf p1"
+        ],
+        "latency_ms": 2886.5465999988373,
+        "tokens": 1405,
+        "cost_usd": 0.000232,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q41",
+        "type": "text",
+        "question": "What is the annual learning budget per employee?",
+        "answer": "The annual learning budget is Rs 40,000 per employee for courses, certifications, and conferences, and unused budget does not roll over [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the annual learning budget per employee, which matches the reference answer and is directly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.716,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p3"
+        ],
+        "latency_ms": 2200.3179999992426,
+        "tokens": 1468,
+        "cost_usd": 0.000166,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q42",
+        "type": "multi",
+        "question": "Where are Northwind's headquarters, and where was the March 2026 board meeting held?",
+        "answer": "Northwind's headquarters is in Pune, India [S4][S5]. The March 2026 board meeting was held at the Pune headquarters, on 14 March 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the headquarters location and meeting venue, and all claims are supported by the cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.665,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2311.7873999999574,
+        "tokens": 1295,
+        "cost_usd": 0.000154,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q43",
+        "type": "unanswerable",
+        "question": "What is Northwind's stock ticker symbol?",
+        "answer": "The provided sources do not contain Northwind's stock ticker symbol. They cover the CEO's letters, board minutes, and an invoice, but none mention a ticker [S1][S2][S3][S4][S5][S6].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly states that the information is not present in the provided sources, similar to the reference answer.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.527,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "northwind_board_minutes_dec2025.pdf p1",
+          "invoice_inv_2026_0457.png p1",
+          "northwind_board_minutes_mar2026.pdf p1",
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2463.9232000008633,
+        "tokens": 1465,
+        "cost_usd": 0.000188,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q44",
+        "type": "unanswerable",
+        "question": "How much did Northwind spend on marketing in FY2025?",
+        "answer": "The sources do not contain this information. None of the provided documents report Northwind's marketing spend for FY2025. They cover revenue by segment [S3], the CEO letter with headcount and retention figures [S2], and FY2025 capital expenditure guidance [S1], but no marketing expense figure.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly states that the information is not in the documents and provides a relevant, grounded explanation.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.54,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3",
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p6"
+        ],
+        "latency_ms": 2711.0894999987067,
+        "tokens": 1821,
+        "cost_usd": 0.000221,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q45",
+        "type": "unanswerable",
+        "question": "What is the company's policy on bringing pets to the office?",
+        "answer": "The documents do not contain this information. None of the provided sources mention a pet policy or whether pets are allowed in the office. The handbook excerpt [S1][S3] covers working hours, remote work, and information security, and the annual reports [S4][S5][S6] cover financial and corporate details. For the pet policy, please check with your HR business partner, as the handbook directs questions to them [S1][S3].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly states that the information is not in the documents and provides a reasonable suggestion for further inquiry, which is supported by the cited passages.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.491,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p1",
+          "northwind_employee_handbook.pdf p3",
+          "southwind_annual_report_fy2025.pdf p1",
+          "eastwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 2666.329499999847,
+        "tokens": 1382,
+        "cost_usd": 0.00019,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q46",
+        "type": "text",
+        "question": "Who is the CEO of Southwind Analytics?",
+        "answer": "The documents name Rahul Menon as the Chief Executive Officer of Southwind Analytics. His letter appears in the Southwind Analytics Annual Report Fiscal Year 2025 [S1].\n\nOther CEO names in the sources (Meera Iyer, Ananya Bose) belong to Northwind Analytics and Eastwind Data Systems, not Southwind [S2, S3, S4].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identifies Rahul Menon as the CEO of Southwind Analytics based on the provided document [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.607,
+        "verified": null,
+        "citations": [
+          "southwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "eastwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2399.840400001267,
+        "tokens": 1703,
+        "cost_usd": 0.000224,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q47",
+        "type": "text",
+        "question": "What was Northwind's total revenue in FY2024?",
+        "answer": "Northwind's total revenue in FY2024 was US$409.0 million [S1]. This matches the CEO letter, which states total revenue grew 14% year over year to $409.0 million [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately reports the total revenue and percentage increase, both of which are supported by the cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.684,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p3",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 2301.903500001572,
+        "tokens": 1870,
+        "cost_usd": 0.000213,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      }
+    ],
+    "llm_model": "openrouter/anthropic/claude-haiku-5.5",
+    "judge_model": "openrouter/google/gemini-2.5-flash"
+  },
+  "hybrid": {
+    "config": {
+      "retrieval_mode": "hybrid",
+      "agent_mode": "single"
+    },
+    "summary": {
+      "questions": 47,
+      "errors": 0,
+      "accuracy": 100.0,
+      "judge_accuracy": 95.74468085106383,
+      "answerable_accuracy": 100.0,
+      "retrieval_hit_rate": 97.72727272727273,
+      "groundedness": 97.87234042553192,
+      "abstention_accuracy": 100.0,
+      "false_abstention_rate": 0.0,
+      "accuracy_by_type": {
+        "calc": 100.0,
+        "figure": 100.0,
+        "multi": 100.0,
+        "ocr": 100.0,
+        "table": 100.0,
+        "text": 100.0
+      },
+      "latency_p50_s": 2.778594000001249,
+      "latency_p95_s": 3.579564300000129,
+      "avg_tokens": 1708.127659574468,
+      "avg_llm_calls": 1,
+      "cost_per_query_usd": 0.00022714893617021276,
+      "mean_confidence_correct": 0.6579772727272727,
+      "mean_confidence_wrong": null
+    },
+    "rows": [
+      {
+        "id": "q01",
+        "type": "text",
+        "question": "What was Northwind's total revenue in FY2025?",
+        "answer": "Northwind's total revenue in FY2025 was $482.6 million, up 18% year over year [S2]. The segment table confirms the FY2025 Total of 482.6 (Cloud Platform 233.6 + Data Services 135.4 + Consulting 113.6) [S1].\n\nNote that S5 is a different company (Southwind Analytics) and was not used for this figure.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the total revenue and year-over-year increase, matching the reference answer and being fully supported by the cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.62,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 3358.7752999992517,
+        "tokens": 2118,
+        "cost_usd": 0.000262,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q02",
+        "type": "text",
+        "question": "Who is the CEO of Northwind Analytics?",
+        "answer": "The CEO of Northwind Analytics is **Meera Iyer**. Her signed letter appears in the FY2025 annual report (page 1) [S1] and the FY2024 annual report (page 1) [S5].\n\nThe sources do not state whether she still holds the role after the FY2025 report.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": false,
+        "judge_reason": "The system correctly identifies Meera Iyer as CEO and her letter in the FY2024 report but incorrectly states her letter appears in the FY2025 annual report.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.563,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 3321.1718000002293,
+        "tokens": 1907,
+        "cost_usd": 0.000292,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q03",
+        "type": "text",
+        "question": "In which year was Northwind Analytics founded and where is it headquartered?",
+        "answer": "Northwind Analytics was founded in 2011 and is headquartered in Pune, India [S1, S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the founding year and headquarters location, matching the reference answer and being fully supported by the provided citations.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.687,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 2399.261700000352,
+        "tokens": 1796,
+        "cost_usd": 0.000222,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q04",
+        "type": "text",
+        "question": "What was Northwind's enterprise net retention in FY2025?",
+        "answer": "Northwind's enterprise net retention in FY2025 was 124%. [S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states Northwind's enterprise net retention in FY2025 as 124%, which is directly supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.495,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2332.5005999995483,
+        "tokens": 1611,
+        "cost_usd": 0.000173,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q05",
+        "type": "text",
+        "question": "How many new enterprise accounts did Northwind sign in FY2025?",
+        "answer": "Northwind signed 61 new enterprise accounts in FY2025 [S1]. This is from the CEO letter in the Northwind Analytics Annual Report FY2025, page 1 [S1]. The FY2024 figure of 48 [S2] and the Southwind Analytics figure of 33 [S3] are for different years or companies and do not answer the question.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly answers the question with the exact number provided in the reference and grounds this information in the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.704,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "southwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 2388.7467999993532,
+        "tokens": 1705,
+        "cost_usd": 0.000218,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q06",
+        "type": "text",
+        "question": "What new capability did Northwind's Cloud Platform launch in the third quarter of FY2025?",
+        "answer": "Northwind's Cloud Platform launched real-time streaming ingestion in the third quarter of FY2025 [S1].\n\nNote: The Cloud Platform multi-region failover launch mentioned in [S4] was in the second quarter of the FY2024 report, so it does not answer this question. [S6] is from Southwind Analytics, a different company, and was not used.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies real-time streaming ingestion as the new capability launched in the third quarter of FY2025, which is directly supported by S1.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.708,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p2",
+          "northwind_annual_report_fy2024.pdf p2",
+          "southwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2570.4063000011956,
+        "tokens": 2046,
+        "cost_usd": 0.000253,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q07",
+        "type": "text",
+        "question": "What was the average utilisation of Northwind's billable consultants in FY2025?",
+        "answer": "Utilisation of billable consultants averaged **78%** in FY2025 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the average utilisation of billable consultants as 78%, which matches the reference answer and is directly supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.711,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p2"
+        ],
+        "latency_ms": 3209.2733999998018,
+        "tokens": 1765,
+        "cost_usd": 0.00021,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q08",
+        "type": "table",
+        "question": "What was Northwind's Data Services revenue in Q3 FY2025?",
+        "answer": "Northwind's Data Services revenue in Q3 FY2025 was US$34.7 million [S1]. This is taken from the Northwind Analytics FY2025 Annual Report, Revenue by Segment table, page 3 [S1]. Figures from Southwind Analytics [S4] and Eastwind Data Systems [S6] were not used because they are different companies.",
+        "correct": true,
+        "judge_correct": false,
+        "grounded": true,
+        "judge_reason": "The system's answer states a value that is not present in the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.686,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3",
+          "southwind_annual_report_fy2025.pdf p3",
+          "eastwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2498.127700000623,
+        "tokens": 2285,
+        "cost_usd": 0.000277,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q09",
+        "type": "table",
+        "question": "How much revenue did Northwind's Cloud Platform segment generate in FY2025?",
+        "answer": "Northwind's Cloud Platform segment generated **$233.6 million** in FY2025 [S1]. The FY2025 revenue table shows this as the full-year figure, with quarterly amounts of 52.4, 56.1, 60.3, and 64.8 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the revenue figure which matches the reference answer and is supported by the provided table in S1.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.71,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2655.409300001338,
+        "tokens": 2328,
+        "cost_usd": 0.000296,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q10",
+        "type": "table",
+        "question": "What was Northwind's total revenue in the fourth quarter of FY2025?",
+        "answer": "Northwind Analytics' total revenue in Q4 of FY2025 was **US$130.9 million** [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately extracts the total revenue for Q4 FY2025 from the provided table, matching the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.691,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2613.6741999998776,
+        "tokens": 2242,
+        "cost_usd": 0.000275,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q11",
+        "type": "calc",
+        "question": "What percentage of Northwind's FY2025 revenue came from the Cloud Platform?",
+        "answer": "Northwind's Cloud Platform generated $233.6 million of its $482.6 million FY2025 revenue, or about **48.4%** [S2]. This is my calculation from those two figures in the segment table [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the percentage of revenue from the Cloud Platform and cites the relevant table.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.691,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 3249.4428000009066,
+        "tokens": 2167,
+        "cost_usd": 0.000314,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q12",
+        "type": "calc",
+        "question": "By how much did Northwind's Consulting revenue grow from Q1 to Q4 of FY2025?",
+        "answer": "Northwind's Consulting revenue rose by **US$2.6 million** from Q1 (27.0) to Q4 (29.6) of FY2025, which is about a 9.6% increase [S1]. This is calculated from the Q1 and Q4 figures in the table. The Southwind Analytics table [S5] is a different company and was not used.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the revenue growth and percentage increase, which matches the reference answer and is supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.632,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3",
+          "southwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 2847.3721999998816,
+        "tokens": 2098,
+        "cost_usd": 0.000298,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q13",
+        "type": "calc",
+        "question": "What was the average quarterly revenue of Northwind's Data Services in FY2025?",
+        "answer": "Northwind's Data Services averaged about **US$33.85 million per quarter** in FY2025. Its quarterly revenues were 31.2, 33.0, 34.7, and 36.5, totaling 135.4 for the year, so the average is 135.4 / 4 = 33.85 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately calculates the average quarterly revenue of Northwind's Data Services in FY2025 based on the provided table, matching the reference answer's key facts and calculation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.605,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 3579.564300000129,
+        "tokens": 2471,
+        "cost_usd": 0.000369,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q14",
+        "type": "figure",
+        "question": "What was Northwind's operating margin in 2023?",
+        "answer": "Northwind's operating margin in 2023 was **15.1%** [S1, S2]. Both Northwind annual reports (FY2024 and FY2025) show this same figure on page 4.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states Northwind's operating margin in 2023 as 15.1%, which is directly supported by both cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.572,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p4",
+          "northwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 2673.1846000002406,
+        "tokens": 2307,
+        "cost_usd": 0.000297,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q15",
+        "type": "figure",
+        "question": "How did Northwind's operating margin change from 2021 to 2025?",
+        "answer": "Northwind's operating margin rose from 11.2% in 2021 to 19.4% in 2025, an increase of 8.2 percentage points [S1]. The 2021 value of 11.2% is also confirmed in the FY2024 report [S2]. Over this period, the margin grew each year [S1].\n\nI excluded S4 (Southwind Analytics) and S5 (Eastwind Data Systems), since they report different companies.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the change in operating margin and that it rose every year, with all data supported by the provided sources.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.641,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4"
+        ],
+        "latency_ms": 3259.86069999999,
+        "tokens": 2475,
+        "cost_usd": 0.00038,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q16",
+        "type": "figure",
+        "question": "What share of Northwind's FY2025 revenue came from North America?",
+        "answer": "Northwind's North America share of FY2025 revenue was **34%** [S3].\n\nSouthwind's FY2025 figure of 21% [S4] is for a different company, so I excluded it. The FY2024 North America share of 35% [S2] is also not relevant to FY2025.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the North America share of FY2025 revenue for Northwind from the provided passage [S3], and explained why other information was irrelevant.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.681,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4",
+          "southwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4"
+        ],
+        "latency_ms": 3261.2580000004527,
+        "tokens": 1730,
+        "cost_usd": 0.000266,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q17",
+        "type": "figure",
+        "question": "Which region contributed the most to Northwind's revenue in FY2025?",
+        "answer": "The sources do not contain a FY2025 revenue-by-region breakdown for Northwind Analytics. The Northwind FY2025 report gives only segment figures (Cloud Platform, Data Services, Consulting) [S1].\n\nTwo regional charts appear in the sources, but neither applies:\n- The FY2025 regional pie chart [S3] is from Southwind Analytics, a different company, where India is 52% [S3].\n- The FY2024 Northwind regional chart shows India at 36% and North America at 35% [S2]. That is the most recent Northwind regional data available, but it is for FY2024, not FY2025.",
+        "correct": true,
+        "judge_correct": false,
+        "grounded": true,
+        "judge_reason": "The system correctly identified that the information is not available for Northwind in FY2025, but the reference answer incorrectly provided specific data for FY2025.",
+        "retrieval_hit": false,
+        "abstained": false,
+        "confidence": 0.573,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3",
+          "southwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4"
+        ],
+        "latency_ms": 3860.7639000001654,
+        "tokens": 2211,
+        "cost_usd": 0.000392,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q18",
+        "type": "text",
+        "question": "By how much did Northwind reduce carbon emissions in FY2025, and against which baseline?",
+        "answer": "Northwind reduced absolute carbon emissions by 22% in FY2025, measured against a 2023 baseline [S1].\n\nNote that S3 (Southwind Analytics) and S4 (Eastwind Data Systems) report different reductions and baselines, but they are not Northwind's figures, so I have not used them [S3, S4]. S2 (Northwind's FY2024 report) gives a 9% reduction against a 2022 baseline, which is a prior-year figure and not FY2025 [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the 22% reduction and the 2023 baseline, which matches the reference answer and is supported by S1.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.699,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5",
+          "southwind_annual_report_fy2025.pdf p5",
+          "eastwind_annual_report_fy2025.pdf p5",
+          "northwind_annual_report_fy2024.pdf p5"
+        ],
+        "latency_ms": 3255.008199999793,
+        "tokens": 1538,
+        "cost_usd": 0.000221,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q19",
+        "type": "text",
+        "question": "What was Northwind's voluntary attrition in FY2025, and what was it the year before?",
+        "answer": "Northwind's voluntary employee attrition was **13.1% in FY2025**, improved from **16.4% in the prior year (FY2024)** [S2]. The FY2024 report also gives 16.4% for that year [S3].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the attrition rates for FY2025 and the prior year (FY2024) and both figures are directly supported by the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.65,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5",
+          "northwind_annual_report_fy2024.pdf p5"
+        ],
+        "latency_ms": 2952.9211000008218,
+        "tokens": 1638,
+        "cost_usd": 0.000238,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q20",
+        "type": "text",
+        "question": "What share of Northwind's FY2025 revenue came from its top ten customers?",
+        "answer": "Northwind's top ten customers accounted for **27% of FY2025 revenue** [S6].\n\nNorthwind's FY2024 report gave 29% for the same metric [S1], so the share fell in FY2025. Sources S2 and S5 cover other companies (Southwind and Eastwind), so I excluded them.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer directly states the share of Northwind's FY2025 revenue from its top ten customers, matching the reference answer and being fully supported by source S6.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.624,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5",
+          "northwind_annual_report_fy2024.pdf p5"
+        ],
+        "latency_ms": 3298.4620000006544,
+        "tokens": 1459,
+        "cost_usd": 0.00025,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q21",
+        "type": "text",
+        "question": "What is Northwind's revenue guidance for FY2026?",
+        "answer": "Northwind's revenue guidance for FY2026 is between $560 million and $580 million [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the revenue guidance for FY2026, which matches the reference answer and is directly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.666,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p6"
+        ],
+        "latency_ms": 2597.7077999996254,
+        "tokens": 1768,
+        "cost_usd": 0.00019,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q22",
+        "type": "text",
+        "question": "Where does Northwind plan to open a new office in FY2026, and when?",
+        "answer": "Northwind plans to open a **Singapore office in the second quarter of FY2026** [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the location and timeframe for opening the new office, directly supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.672,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p6"
+        ],
+        "latency_ms": 2493.332800000644,
+        "tokens": 1231,
+        "cost_usd": 0.000157,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q23",
+        "type": "table",
+        "question": "How many people worked in Engineering at Northwind at the end of FY2025?",
+        "answer": "Northwind Analytics had **1,120 people** in Engineering at the end of FY2025 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system's answer directly provides the correct number of people in Engineering at Northwind at the end of FY2025, which matches the reference answer and is supported by the cited passage S1.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.68,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7"
+        ],
+        "latency_ms": 2737.419700000828,
+        "tokens": 1697,
+        "cost_usd": 0.000235,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q24",
+        "type": "calc",
+        "question": "What fraction of Northwind's FY2025 employees were in Sales & Marketing?",
+        "answer": "Northwind's Sales & Marketing headcount in FY2025 was 410 out of 2,340 employees [S2], which is 410/2,340 = 41/234, or about 17.5%. The 2,340 total is also confirmed in the CEO letter [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identifies the fraction of employees in Sales & Marketing and provides the correct percentage, which matches the reference answer and is supported by the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.674,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7",
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 3228.0915999999706,
+        "tokens": 1920,
+        "cost_usd": 0.000294,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q25",
+        "type": "ocr",
+        "question": "What final dividend did Northwind's board approve for FY2025?",
+        "answer": "Northwind's board approved a final dividend of Rs 4.50 per equity share for fiscal year 2025, payable on 30 April 2026 [S1].\n\nThe December 2025 minutes mention a different payment, an interim dividend of Rs 3.75 per equity share, which is not the final dividend [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the final dividend amount and payment date for FY2025, which matches the reference answer and is fully supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.706,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1",
+          "northwind_board_minutes_dec2025.pdf p1"
+        ],
+        "latency_ms": 2645.6207999999606,
+        "tokens": 1549,
+        "cost_usd": 0.000196,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q26",
+        "type": "ocr",
+        "question": "Which company is Northwind acquiring and for how much?",
+        "answer": "Northwind is acquiring DataLoom Technologies for a total consideration of USD 28 million, subject to regulatory approval. Closing is expected in Q1 FY2027 [S3].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the company and the amount, matching the reference answer. All information in the system answer is directly supported by the cited passage [S3].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.555,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2464.839700000084,
+        "tokens": 1909,
+        "cost_usd": 0.000216,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q27",
+        "type": "ocr",
+        "question": "How many directors attended the March 2026 board meeting?",
+        "answer": "The March 2026 board meeting had 9 directors present, including the Chair, Arvind Rao [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the number of directors present as 9, which matches the reference answer and is directly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.625,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2494.087799999761,
+        "tokens": 1040,
+        "cost_usd": 0.000119,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q28",
+        "type": "ocr",
+        "question": "Who was appointed CFO and from what date?",
+        "answer": "Priya Natarajan was appointed Chief Financial Officer with effect from 1 April 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the CFO and the effective date of appointment, which fully matches the reference answer and is supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.617,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 2348.9167000007,
+        "tokens": 1391,
+        "cost_usd": 0.000155,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q29",
+        "type": "ocr",
+        "question": "According to the March 2026 board minutes, when is the next board meeting?",
+        "answer": "According to the March 2026 board minutes, the next Board meeting will be held on **12 June 2026** [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately extracts the date of the next board meeting from the provided text, which matches the reference answer exactly.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.655,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 3139.9333000008482,
+        "tokens": 1131,
+        "cost_usd": 0.000162,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q30",
+        "type": "ocr",
+        "question": "What did the February 2026 penetration test find, according to the board minutes?",
+        "answer": "According to the March 2026 board minutes, the February 2026 external penetration test found zero critical findings [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the zero critical findings from the February 2026 penetration test, which is supported by the provided citation.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.657,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 2390.3970000010304,
+        "tokens": 1045,
+        "cost_usd": 0.000119,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q31",
+        "type": "ocr",
+        "question": "What is the total amount due on invoice INV-2026-0457?",
+        "answer": "The total due on invoice INV-2026-0457 is **15,316.40** (USD), which includes a subtotal of 12,980.00 and GST at 18% of 2,336.40 [S1]. Payment is due by 15 November 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identifies the total amount due from the provided invoice and includes additional accurate details from the source document.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.678,
+        "verified": null,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 2761.5793000004487,
+        "tokens": 2356,
+        "cost_usd": 0.000309,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q32",
+        "type": "ocr",
+        "question": "When is payment due for the Acme Retail invoice?",
+        "answer": "The Acme Retail invoice (INV-2026-0457, dated 16 October 2026, total due USD 15,316.40) is payable by **15 November 2026** [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the payment due date from the provided invoice, which matches the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.662,
+        "verified": null,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 2917.687400000432,
+        "tokens": 1344,
+        "cost_usd": 0.000187,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q33",
+        "type": "ocr",
+        "question": "How much GST was charged on the invoice?",
+        "answer": "The GST charged on invoice INV-2026-0457 was 2,336.40 (USD), at an 18% rate on the subtotal of 12,980.00 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified the GST amount and rate directly from the provided invoice, matching the reference answer.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.659,
+        "verified": null,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 110435.12550000014,
+        "tokens": 1683,
+        "cost_usd": 0.000191,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q34",
+        "type": "text",
+        "question": "How many days of paid annual leave do employees get?",
+        "answer": "Full-time employees receive 24 days of paid annual leave per calendar year, accrued monthly, with up to 10 unused days carried forward to the next year [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the number of paid annual leave days, matching the reference answer and citing the supporting passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.708,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2578.480499998477,
+        "tokens": 1264,
+        "cost_usd": 0.000148,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q35",
+        "type": "text",
+        "question": "How many unused leave days can be carried forward?",
+        "answer": "A maximum of 10 unused annual leave days can be carried forward to the next year [S1]. This applies to full-time employees, who receive 24 days of paid annual leave per year [S1]. Sick leave cannot be carried forward [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states that a maximum of 10 unused leave days can be carried forward, matching the reference answer and being fully supported by the provided passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.694,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2819.5333999992727,
+        "tokens": 1288,
+        "cost_usd": 0.000161,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q36",
+        "type": "text",
+        "question": "How many days a week can I work from home?",
+        "answer": "You can work remotely up to **three days per week** with your manager's approval [S1].\n\nFully remote arrangements, which are not limited to three days, require approval from your department head and HR [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the number of remote workdays and the condition for approval, which are both supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.663,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p1"
+        ],
+        "latency_ms": 3055.92599999909,
+        "tokens": 1331,
+        "cost_usd": 0.00019,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q37",
+        "type": "text",
+        "question": "What is the notice period after confirmation, and during probation?",
+        "answer": "During probation, the notice period is 15 days, and after confirmation it is 60 days for all roles [S1]. New employees serve a six-month probation period [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the notice periods for both probation and after confirmation, matching the reference answer and citing the provided passage for all information.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.709,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p1"
+        ],
+        "latency_ms": 2438.012799999342,
+        "tokens": 1135,
+        "cost_usd": 0.000135,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q38",
+        "type": "text",
+        "question": "What is the daily meal allowance on business trips?",
+        "answer": "The daily meal allowance during business travel is capped at Rs 1,500 per day [S1]. This is found in Section 4 (Travel and Expenses), page 2 of the handbook [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the daily meal allowance as Rs 1,500 per day, matching the reference answer, and this information is directly supported by the provided citation [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.708,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2588.3797999995295,
+        "tokens": 1274,
+        "cost_usd": 0.000153,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q39",
+        "type": "text",
+        "question": "How long is parental leave for primary and secondary caregivers?",
+        "answer": "Primary caregivers are entitled to 26 weeks of paid parental leave, and secondary caregivers are entitled to 4 weeks [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the parental leave durations for both primary and secondary caregivers, matching the reference answer and fully supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.687,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 2331.993499999953,
+        "tokens": 1247,
+        "cost_usd": 0.000145,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q40",
+        "type": "text",
+        "question": "Under the employee handbook, how often must passwords be changed, and what is the minimum length?",
+        "answer": "Under the Employee Handbook, passwords must be **at least 14 characters** and are **rotated every 90 days** [S1].\n\nThe Contractor IT Access Policy sets different rules for contractors: 16 characters minimum and rotation every 60 days [S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly extracts both key facts from the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.695,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p3",
+          "northwind_contractor_it_policy.pdf p1"
+        ],
+        "latency_ms": 3151.152499998716,
+        "tokens": 1375,
+        "cost_usd": 0.000217,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q41",
+        "type": "text",
+        "question": "What is the annual learning budget per employee?",
+        "answer": "Each employee has an annual learning budget of Rs 40,000 for courses, certifications, and conferences. Unused budget does not roll over to the next year [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the annual learning budget of Rs 40,000, which matches the reference answer and is directly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.616,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p3"
+        ],
+        "latency_ms": 2832.784800000809,
+        "tokens": 1540,
+        "cost_usd": 0.000206,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q42",
+        "type": "multi",
+        "question": "Where are Northwind's headquarters, and where was the March 2026 board meeting held?",
+        "answer": "Northwind's headquarters is in Pune, India [S4][S6]. The March 2026 board meeting was held at the Pune headquarters, on 14 March 2026 [S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the headquarters location and the board meeting location, and both facts are supported by the provided citations.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.665,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 2672.99759999878,
+        "tokens": 1295,
+        "cost_usd": 0.000154,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q43",
+        "type": "unanswerable",
+        "question": "What is Northwind's stock ticker symbol?",
+        "answer": "The provided sources do not contain Northwind's stock ticker symbol. They include the CEO letters, board minutes, an invoice, and a revenue table [S1, S2, S3, S4, S5, S6], but none of them mention a ticker.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly states that the information is not in the documents and provides supporting details about the content of the cited passages.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.527,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_board_minutes_dec2025.pdf p1",
+          "invoice_inv_2026_0457.png p1",
+          "northwind_annual_report_fy2024.pdf p1",
+          "northwind_annual_report_fy2024.pdf p3",
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 3110.751700000037,
+        "tokens": 1831,
+        "cost_usd": 0.000257,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q44",
+        "type": "unanswerable",
+        "question": "How much did Northwind spend on marketing in FY2025?",
+        "answer": "The sources do not contain Northwind's FY2025 marketing spend. The only marketing-related figure is the headcount of 410 employees in the combined \"Sales & Marketing\" function, which is a staffing number, not a spending amount [S5].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identifies that the information is not present and provides supporting details from the cited passage.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.529,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7"
+        ],
+        "latency_ms": 2791.454000000158,
+        "tokens": 1869,
+        "cost_usd": 0.000246,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q45",
+        "type": "unanswerable",
+        "question": "What is the company's policy on bringing pets to the office?",
+        "answer": "The documents do not contain this information. None of the sources (the Employee Handbook excerpts, the Contractor IT Access Policy, or the annual reports) mention a policy on bringing pets to the office.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified that the information is not present in the provided documents, which aligns with the reference answer and is inherently grounded.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.175,
+        "verified": null,
+        "citations": [],
+        "latency_ms": 2790.259099998366,
+        "tokens": 1319,
+        "cost_usd": 0.000158,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q46",
+        "type": "text",
+        "question": "Who is the CEO of Southwind Analytics?",
+        "answer": "The CEO of Southwind Analytics is Rahul Menon, according to the Chief Executive Officer's letter in the FY2025 annual report [S1].\n\nA separate document covers Northwind Analytics Ltd., which has a different CEO, so it does not apply to Southwind [S4].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identified Rahul Menon as the CEO of Southwind Analytics, and the information is supported by the provided passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.673,
+        "verified": null,
+        "citations": [
+          "southwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 2778.594000001249,
+        "tokens": 1657,
+        "cost_usd": 0.000247,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q47",
+        "type": "text",
+        "question": "What was Northwind's total revenue in FY2024?",
+        "answer": "Northwind's total revenue in FY2024 was $409.0 million [S1, S2]. The FY2024 segment table lists a Total of 409.0 for the year, which matches the CEO letter's statement that revenue grew 14% to $409.0 million [S1, S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the total revenue and growth percentage, which matches the reference answer and is supported by the provided passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.684,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p3",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 2541.8277000007947,
+        "tokens": 1896,
+        "cost_usd": 0.000226,
+        "llm_calls": 1,
+        "tools": [
+          [
+            "search_documents"
+          ],
+          [
+            "done"
+          ]
+        ]
+      }
+    ],
+    "llm_model": "openrouter/anthropic/claude-haiku-5.5",
+    "judge_model": "openrouter/google/gemini-2.5-flash"
+  },
+  "full": {
+    "config": {
+      "retrieval_mode": "hybrid",
+      "agent_mode": "agent"
+    },
+    "llm_model": "groq/openai/gpt-oss-120b",
+    "judge_model": "groq/qwen/qwen3.8-27b",
+    "summary": {
+      "questions": 47,
+      "errors": 0,
+      "accuracy": 97.87234042553192,
+      "judge_accuracy": 95.74468085106383,
+      "answerable_accuracy": 97.72727272727273,
+      "retrieval_hit_rate": 97.72727272727273,
+      "groundedness": 95.74468085106383,
+      "abstention_accuracy": 100.0,
+      "false_abstention_rate": 0.0,
+      "accuracy_by_type": {
+        "calc": 75.0,
+        "figure": 100.0,
+        "multi": 100.0,
+        "ocr": 100.0,
+        "table": 100.0,
+        "text": 100.0
+      },
+      "latency_p50_s": 26.298806399994646,
+      "latency_p95_s": 95.24657560000196,
+      "avg_tokens": 6810.340425531915,
+      "avg_llm_calls": 4.553191489361702,
+      "cost_per_query_usd": 0.00022646808510638297,
+      "mean_confidence_correct": 0.8113488372093023,
+      "mean_confidence_wrong": 0.62
+    },
+    "rows": [
+      {
+        "id": "q01",
+        "type": "text",
+        "question": "What was Northwind's total revenue in FY2025?",
+        "answer": "Northwind\u2019s total revenue for FY\u202f2025 was **$482.6\u202fmillion**[S1].",
+        "correct": true,
+        "judge_correct": false,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the total revenue but omits the year-over-year growth percentage (18%) specified in the reference answer.",
+        "retrieval_hit": false,
+        "abstained": false,
+        "confidence": 0.932,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 151618.98349999683,
+        "tokens": 8860,
+        "cost_usd": 0.000241,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"total revenue FY2025\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the total revenue for FY2025?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q02",
+        "type": "text",
+        "question": "Who is the CEO of Northwind Analytics?",
+        "answer": "Meera\u202fIyer is the Chief Executive Officer of Northwind Analytics[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": false,
+        "judge_reason": "The system correctly identifies Meera Iyer as the CEO matching the reference, but the provided citation [S1] contains shareholder letter text that does not explicitly state her name or title, making the answer unsupported by the given evidence.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.751,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 77234.78720001003,
+        "tokens": 11188,
+        "cost_usd": 0.000188,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\",\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"CEO\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Chief Executive Officer\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\"],\"query\":\"Chief Executive Officer\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q03",
+        "type": "text",
+        "question": "In which year was Northwind Analytics founded and where is it headquartered?",
+        "answer": "Northwind Analytics was founded in\u202f2011 and its headquarters are in\u202fPune,\u202fIndia[S1][S2]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system accurately identifies the founding year as 2011 and the headquarters as Pune, India, consistent with both the reference answer and the cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.85,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 16402.81879999384,
+        "tokens": 5610,
+        "cost_usd": 0.00023,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"Northwind Analytics founded\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q04",
+        "type": "text",
+        "question": "What was Northwind's enterprise net retention in FY2025?",
+        "answer": "Northwind\u2019s enterprise net retention in FY\u202f2025 was **124%**[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the net retention as 124%, which matches the reference and is explicitly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.785,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 26298.806399994646,
+        "tokens": 5160,
+        "cost_usd": 0.000194,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"enterprise net retention\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q05",
+        "type": "text",
+        "question": "How many new enterprise accounts did Northwind sign in FY2025?",
+        "answer": "Northwind signed **61 new enterprise accounts** in FY2025[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the number of new enterprise accounts as 61, which matches both the reference answer and the specific fact stated in the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.811,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 64470.6179999921,
+        "tokens": 11739,
+        "cost_usd": 0.000239,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"new enterprise accounts FY2025\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"enterprise accounts\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"new accounts FY2025\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\",\"3fe1c8d7-ba77-48a2-bd20-82935dedd262\"],\"query\":\"enterprise accounts\"})"
+          ]
+        ]
+      },
+      {
+        "id": "q06",
+        "type": "text",
+        "question": "What new capability did Northwind's Cloud Platform launch in the third quarter of FY2025?",
+        "answer": "Northwind\u2019s Cloud Platform introduced **real\u2011time streaming ingestion** in the third quarter of FY\u202f2025[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately identifies 'real-time streaming ingestion' as the capability launched in Q3 FY2025, which directly matches the reference answer and is explicitly supported by cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.854,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p2"
+        ],
+        "latency_ms": 20841.79239999503,
+        "tokens": 5163,
+        "cost_usd": 0.000198,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"third quarter FY2025 launch new capability cloud platform\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q07",
+        "type": "text",
+        "question": "What was the average utilisation of Northwind's billable consultants in FY2025?",
+        "answer": "The average utilisation of Northwind\u2019s billable consultants in FY\u202f2025 was **78\u202f%**[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the correct figure of 78% and is directly supported by the cited passage which explicitly mentions the average utilisation of billable consultants was 78%.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.855,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p2"
+        ],
+        "latency_ms": 25664.59419998864,
+        "tokens": 5125,
+        "cost_usd": 0.000204,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"utilisation billable consultants\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q08",
+        "type": "table",
+        "question": "What was Northwind's Data Services revenue in Q3 FY2025?",
+        "answer": "Northwind\u2019s Data Services revenue in Q3\u202fFY2025 was **US\u202f$34.7\u202fmillion**[S2]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the revenue as $34.7 million, which matches the reference answer and is supported by the context of the cited table showing quarterly revenue by segment.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.932,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 41087.06350000284,
+        "tokens": 8633,
+        "cost_usd": 0.000241,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Data Services Q3 FY2025 revenue\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the Data Services revenue for Q3 FY2025 in US$ millions?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q09",
+        "type": "table",
+        "question": "How much revenue did Northwind's Cloud Platform segment generate in FY2025?",
+        "answer": "Northwind\u2019s Cloud Platform segment generated **US\u202f$233.6\u202fmillion** in FY2025[S2]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer matches the reference figure of $233.6 million exactly, and the cited passage S2 provides the table corresponding to the Northwind Analytics segment, supporting the factual claim.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.932,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 48818.56099999277,
+        "tokens": 8745,
+        "cost_usd": 0.000241,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Cloud Platform segment revenue FY2025\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the FY2025 total revenue for the Cloud Platform segment in US$ millions?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q10",
+        "type": "table",
+        "question": "What was Northwind's total revenue in the fourth quarter of FY2025?",
+        "answer": "Northwind\u2019s total revenue in Q4\u202fFY2025 was **$130.9\u202fmillion**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the revenue figure of $130.9 million, matching the reference, and appropriately cites source S1 which contains the revenue table.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.932,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 60982.94899999746,
+        "tokens": 8876,
+        "cost_usd": 0.000257,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"fourth quarter FY2025 total revenue Northwind\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the total revenue (in US$ millions) for Q4 FY2025?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q11",
+        "type": "calc",
+        "question": "What percentage of Northwind's FY2025 revenue came from the Cloud Platform?",
+        "answer": "Northwind\u2019s Cloud Platform generated\u202f$233.6\u202fmillion of the\u202f$482.6\u202fmillion total FY2025 revenue, which is roughly\u202f48.4\u202f% of the company\u2019s FY2025 revenue[S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the revenue figures and percentage matching the reference, and while the cited table is truncated in the view, the specific numbers align with the data source indicated.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.823,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 33875.986999992165,
+        "tokens": 8325,
+        "cost_usd": 0.000351,
+        "llm_calls": 5,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Cloud Platform revenue FY2025\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the Cloud Platform revenue for FY2025 and what is the total revenue for FY2025? Provide both numbers.\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q12",
+        "type": "calc",
+        "question": "By how much did Northwind's Consulting revenue grow from Q1 to Q4 of FY2025?",
+        "answer": "Northwind\u2019s Consulting revenue increased by **$2.6\u202fmillion** from Q1 ($27.0\u202fM) to Q4 ($29.6\u202fM) of FY2025[S2].",
+        "correct": true,
+        "judge_correct": false,
+        "grounded": false,
+        "judge_reason": "The system answer is incorrect because it fails to include the approximately 9.6% growth rate required by the reference answer, and it is not fully grounded because the Q4 value of $29.6M is not visible in the provided excerpt of the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.932,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 45464.103599995724,
+        "tokens": 9270,
+        "cost_usd": 0.000307,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Consulting revenue Q1 FY2025\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the Consulting segment revenue in Q1 FY2025 and Q4 FY2025 in US$ millions, and what is the growth amount (Q4 minus Q1)?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q13",
+        "type": "calc",
+        "question": "What was the average quarterly revenue of Northwind's Data Services in FY2025?",
+        "answer": "The average quarterly revenue for the Data Services segment in FY\u202f2025 was **$33.85\u202fmillion**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the average quarterly revenue as $33.85 million, which matches the reference calculation (135.4 / 4) and is supported by the implied total in the cited table summary.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.932,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p3"
+        ],
+        "latency_ms": 45461.48680000624,
+        "tokens": 9069,
+        "cost_usd": 0.000273,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Data Services quarterly revenue FY2025\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"What is the average of the quarterly revenues (Q1, Q2, Q3, Q4) for the Data Services segment in FY2025?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q14",
+        "type": "figure",
+        "question": "What was Northwind's operating margin in 2023?",
+        "answer": "Northwind\u2019s operating margin in 2023 was **15.1%**[S1][S2]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the 2023 operating margin as 15.1%, which matches the reference answer and is explicitly supported by the data values in both cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.899,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4",
+          "northwind_annual_report_fy2024.pdf p4"
+        ],
+        "latency_ms": 18674.80209999485,
+        "tokens": 6104,
+        "cost_usd": 0.000282,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"operating margin 2023 Northwind Analytics\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q15",
+        "type": "figure",
+        "question": "How did Northwind's operating margin change from 2021 to 2025?",
+        "answer": "Northwind\u2019s operating margin rose from\u202f11.2\u202f% in\u202f2021\u202fto\u202f19.4\u202f% in\u202f2025, an increase of\u202f8.2\u202fpercentage points[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly matches the key figures from the reference and is fully supported by the data values provided in the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.909,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 95246.57560000196,
+        "tokens": 14581,
+        "cost_usd": 0.000442,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"northwind_annual_report_fy2024.pdf\",\"northwind_annual_report_fy2025.pdf\"],\"query\":\"operating margin 2021 Northwind Analytics\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"northwind_annual_report_fy2025.pdf\"],\"query\":\"Operating margin by fiscal year 2025\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"northwind_annual_report_fy2025.pdf\"],\"query\":\"operating margin 2025 Northwind\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"northwind_annual_report_fy2025.pdf\"],\"query\":\"Operating margin by fiscal year 2025\"})"
+          ]
+        ]
+      },
+      {
+        "id": "q16",
+        "type": "figure",
+        "question": "What share of Northwind's FY2025 revenue came from North America?",
+        "answer": "North America accounted for **34\u202f%** of Northwind\u2019s FY2025 revenue[S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system's answer correctly identifies the 34% figure for North America, which matches the reference and is explicitly supported by the cited passage [S2].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.823,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 43338.44479999971,
+        "tokens": 10953,
+        "cost_usd": 0.000204,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"North America revenue FY2025\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Revenue by region FY2025 North America\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"North America 34% FY2025\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q17",
+        "type": "figure",
+        "question": "Which region contributed the most to Northwind's revenue in FY2025?",
+        "answer": "India contributed the largest share of Northwind\u2019s FY\u202f2025 revenue, accounting for 38% of total revenue[S7].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately identifies the region and percentage matching the reference, and both claims are directly supported by the provided cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.841,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p4"
+        ],
+        "latency_ms": 24195.155800000066,
+        "tokens": 8294,
+        "cost_usd": 0.000255,
+        "llm_calls": 5,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"region revenue FY2025 Northwind\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Revenue by region FY2025 Northwind\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q18",
+        "type": "text",
+        "question": "By how much did Northwind reduce carbon emissions in FY2025, and against which baseline?",
+        "answer": "Northwind cut its absolute carbon emissions by **22%**, measured against its **2023 baseline**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately reflects the 22% reduction against the 2023 baseline described in both the reference and the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.812,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5"
+        ],
+        "latency_ms": 34735.967400003574,
+        "tokens": 5214,
+        "cost_usd": 0.000217,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"carbon emissions reduction FY2025 baseline\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q19",
+        "type": "text",
+        "question": "What was Northwind's voluntary attrition in FY2025, and what was it the year before?",
+        "answer": "Northwind\u2019s voluntary employee attrition was **13.1% in FY\u202f2025**, down from **16.4% in the prior year (FY\u202f2024)**[S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly identifies the attrition rates as 13.1% in FY2025 and 16.4% in the prior year, which matches both the reference answer and the cited passage S2.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.759,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5"
+        ],
+        "latency_ms": 21426.022399988142,
+        "tokens": 5218,
+        "cost_usd": 0.000211,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"1e9f260c-7768-409c-9190-cd7bad7c4598\"],\"query\":\"voluntary attrition\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q20",
+        "type": "text",
+        "question": "What share of Northwind's FY2025 revenue came from its top ten customers?",
+        "answer": "Northwind\u2019s top ten customers contributed\u202f27\u202f% of FY\u202f2025 revenue[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer matches the reference value of 27% and is directly supported by the cited passage [S1] which states the top ten customers account for 27% of revenue.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.809,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p5"
+        ],
+        "latency_ms": 16365.785499991034,
+        "tokens": 5675,
+        "cost_usd": 0.000204,
+        "llm_calls": 5,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"top ten customers revenue share FY2025\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q21",
+        "type": "text",
+        "question": "What is Northwind's revenue guidance for FY2026?",
+        "answer": "Northwind expects FY\u202f2026 revenue to be in the range of **$560\u202fmillion to $580\u202fmillion**[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately reports the revenue range of $560 million to $580 million as stated in the reference and directly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.814,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p6"
+        ],
+        "latency_ms": 23511.495499988087,
+        "tokens": 5486,
+        "cost_usd": 0.000211,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\",\"northwind_annual_report_fy2025.pdf\"],\"query\":\"FY2026 revenue guidance\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q22",
+        "type": "text",
+        "question": "Where does Northwind plan to open a new office in FY2026, and when?",
+        "answer": "Northwind plans to open a Singapore office in the second quarter of FY\u202f2026\u202f[S2].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the location (Singapore) and timing (second quarter of FY2026) and is fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.648,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p6"
+        ],
+        "latency_ms": 48440.976600002614,
+        "tokens": 10805,
+        "cost_usd": 0.000223,
+        "llm_calls": 5,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"northwind_annual_report_fy2025.pdf\",\"northwind_annual_report_fy2024.pdf\",\"northwind_board_minutes_dec2025.pdf\",\"northwind_board_minutes_mar2026.pdf\"],\"query\":\"new office FY2026 location opening\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"northwind_board_minutes_dec2025.pdf\",\"northwind_board_minutes_mar2026.pdf\"],\"query\":\"office\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"northwind_annual_report_fy2025.pdf\"],\"query\":\"Singapore office\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q23",
+        "type": "table",
+        "question": "How many people worked in Engineering at Northwind at the end of FY2025?",
+        "answer": "1,120 people worked in Engineering at the end of FY\u202f2025[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the number 1,120 as found in the cited table for Engineering in FY2025.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.83,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7"
+        ],
+        "latency_ms": 19125.63379999483,
+        "tokens": 5391,
+        "cost_usd": 0.000215,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"headcount Engineering FY2025\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q24",
+        "type": "calc",
+        "question": "What fraction of Northwind's FY2025 employees were in Sales & Marketing?",
+        "answer": "The Sales\u202f&\u202fMarketing function had 410 employees out of a total of 2,340, which is a fraction of **41\u2044234** of the FY2025 headcount[S1].",
+        "correct": false,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system provides the exact numbers used in the reference (410/2340) and includes the direct evidence from the cited table showing the headcount by function.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.62,
+        "verified": null,
+        "citations": [
+          "northwind_annual_report_fy2025.pdf p7"
+        ],
+        "latency_ms": 42004.50379999529,
+        "tokens": 10922,
+        "cost_usd": 0.000292,
+        "llm_calls": 5,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"headcount distribution sales marketing FY2025\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Headcount by Function Summary Sales \\u0026 Marketing\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"Headcount by Function Summary total employees\"})"
+          ],
+          [
+            "query_table({\"document_id\":\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"question\":\"Number of employees in Sales \\u0026 Marketing in FY2025\"})"
+          ]
+        ]
+      },
+      {
+        "id": "q25",
+        "type": "ocr",
+        "question": "What final dividend did Northwind's board approve for FY2025?",
+        "answer": "The board approved a final dividend of **Rs\u202f4.50 per equity share** for fiscal year\u202f2025[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer matches the reference on the dividend amount (Rs 4.50 per equity share) and is fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.716,
+        "verified": null,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 17282.617199991364,
+        "tokens": 4101,
+        "cost_usd": 0.000151,
+        "llm_calls": 3,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"final dividend FY2025 Northwind board approved\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q26",
+        "type": "ocr",
+        "question": "Which company is Northwind acquiring and for how much?",
+        "answer": "Northwind is acquiring **DataLoom\u202fTechnologies** for a total consideration of **USD\u202f28\u202fmillion**[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies DataLoom Technologies and the USD 28 million cost, both of which are explicitly supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.797,
+        "verified": true,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 20713.02499999001,
+        "tokens": 4521,
+        "cost_usd": 0.000151,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"acquisition\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q27",
+        "type": "ocr",
+        "question": "How many directors attended the March 2026 board meeting?",
+        "answer": "Nine directors attended the March\u202f2026 board meeting[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the number of directors (9) matching the reference, and this fact is explicitly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.782,
+        "verified": true,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 8034.360799996648,
+        "tokens": 4415,
+        "cost_usd": 0.000131,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"directors attended\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q28",
+        "type": "ocr",
+        "question": "Who was appointed CFO and from what date?",
+        "answer": "Priya\u202fNatarajan was appointed Chief Financial Officer, effective 1\u202fApril\u202f2026[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies Priya Natarajan and the date 1 April 2026, which are fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.801,
+        "verified": true,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 23399.076899993815,
+        "tokens": 4440,
+        "cost_usd": 0.000128,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"Chief Financial Officer appointment new CFO name date\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q29",
+        "type": "ocr",
+        "question": "According to the March 2026 board minutes, when is the next board meeting?",
+        "answer": "The next board meeting is scheduled for\u202f12\u202fJune\u202f2026[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the date 12 June 2026, which matches the reference answer and is fully supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.853,
+        "verified": true,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 20121.113300003344,
+        "tokens": 4640,
+        "cost_usd": 0.000139,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"next board meeting\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q30",
+        "type": "ocr",
+        "question": "What did the February 2026 penetration test find, according to the board minutes?",
+        "answer": "The February\u202f2026 external penetration test reported zero critical findings. [S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies zero critical findings, which matches the reference, and this claim is fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.621,
+        "verified": true,
+        "citations": [
+          "northwind_board_minutes_mar2026.pdf p2"
+        ],
+        "latency_ms": 6946.314499989967,
+        "tokens": 4812,
+        "cost_usd": 0.000158,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"penetration test February 2026\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q31",
+        "type": "ocr",
+        "question": "What is the total amount due on invoice INV-2026-0457?",
+        "answer": "The total amount due on invoice\u202fINV\u20112026\u20110457 is **15,316.40\u202fUSD**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the total amount due (USD 15,316.40) which matches both the reference answer and the cited invoice data.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.776,
+        "verified": true,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 11238.039099989692,
+        "tokens": 4229,
+        "cost_usd": 0.000111,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2e0f7dfb-01fc-4358-b401-42bf313a6c57\"],\"query\":\"total due amount\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q32",
+        "type": "ocr",
+        "question": "When is payment due for the Acme Retail invoice?",
+        "answer": "The payment is due by\u202f15\u202fNovember\u202f2026[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately identifies the payment due date of 15 November 2026, which matches both the reference answer and the specific text in the cited invoice passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.843,
+        "verified": true,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 6839.796200001729,
+        "tokens": 4192,
+        "cost_usd": 0.000101,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2e0f7dfb-01fc-4358-b401-42bf313a6c57\"],\"query\":\"payment due date Acme Retail invoice\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q33",
+        "type": "ocr",
+        "question": "How much GST was charged on the invoice?",
+        "answer": "The GST charged on the invoice was **$2,336.40**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the GST amount as $2,336.40, which matches both the reference answer and the cited invoice passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.793,
+        "verified": true,
+        "citations": [
+          "invoice_inv_2026_0457.png p1"
+        ],
+        "latency_ms": 22154.407900001388,
+        "tokens": 4180,
+        "cost_usd": 0.000105,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2e0f7dfb-01fc-4358-b401-42bf313a6c57\"],\"query\":\"GST charged\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q34",
+        "type": "text",
+        "question": "How many days of paid annual leave do employees get?",
+        "answer": "Full\u2011time employees receive **24 days of paid annual leave per calendar year**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer matches the reference answer's key fact of 24 days and is fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.686,
+        "verified": null,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 5469.483900000341,
+        "tokens": 4409,
+        "cost_usd": 0.000177,
+        "llm_calls": 3,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"paid annual leave days\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q35",
+        "type": "text",
+        "question": "How many unused leave days can be carried forward?",
+        "answer": "A maximum of **10 unused leave days** may be carried forward to the next year.\u202f[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the maximum of 10 unused leave days, which directly matches the reference answer and is explicitly supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.629,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 13345.010200006072,
+        "tokens": 5002,
+        "cost_usd": 0.000176,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"unused leave days carried forward\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q36",
+        "type": "text",
+        "question": "How many days a week can I work from home?",
+        "answer": "Employees may work remotely up to **three days per week** with their manager\u2019s approval\u202f[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the limit as three days per week with manager approval, matching both the reference answer and the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.847,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p1"
+        ],
+        "latency_ms": 15485.335400007898,
+        "tokens": 5098,
+        "cost_usd": 0.000175,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"work from home days per week\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q37",
+        "type": "text",
+        "question": "What is the notice period after confirmation, and during probation?",
+        "answer": "- After confirmation: 60\u202fdays notice period.  \n- During probation: 15\u202fdays notice period.\u202f[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies the 60-day and 15-day notice periods, and both figures are explicitly supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.681,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p1"
+        ],
+        "latency_ms": 27979.20040000463,
+        "tokens": 4997,
+        "cost_usd": 0.000177,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"notice period after confirmation probation\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q38",
+        "type": "text",
+        "question": "What is the daily meal allowance on business trips?",
+        "answer": "The daily meal allowance on business trips is capped at **Rs\u202f1,500 per day**[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system accurately states the Rs 1,500 limit, which directly matches the reference and is explicitly supported by the cited passage [S1].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.873,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 27297.7993000095,
+        "tokens": 4956,
+        "cost_usd": 0.000179,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"daily meal allowance business trips\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q39",
+        "type": "text",
+        "question": "How long is parental leave for primary and secondary caregivers?",
+        "answer": "Primary caregivers receive **26\u202fweeks** of paid parental leave, while secondary caregivers receive **4\u202fweeks** of paid parental leave[S1].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately provides the 26 weeks for primary and 4 weeks for secondary caregivers as stated in the reference and cited passage, correctly adding that it is paid leave.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.824,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p2"
+        ],
+        "latency_ms": 27996.307499997783,
+        "tokens": 4929,
+        "cost_usd": 0.000167,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"parental leave primary secondary caregiver\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q40",
+        "type": "text",
+        "question": "Under the employee handbook, how often must passwords be changed, and what is the minimum length?",
+        "answer": "Passwords must be rotated every\u202f90\u202fdays, and they must be at least\u202f14\u202fcharacters long.\u202f[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the 90-day rotation interval and 14-character minimum length, which matches the reference answer and is fully supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.651,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p3"
+        ],
+        "latency_ms": 10653.645000013057,
+        "tokens": 5029,
+        "cost_usd": 0.000189,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"password must be changed how often minimum length\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q41",
+        "type": "text",
+        "question": "What is the annual learning budget per employee?",
+        "answer": "Each employee receives an annual learning budget of\u202fRs\u202f40,000 for courses, certifications, and conferences.\u202f[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately states the Rs 40,000 budget and adds details that are explicitly supported by the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.677,
+        "verified": true,
+        "citations": [
+          "northwind_employee_handbook.pdf p3"
+        ],
+        "latency_ms": 26694.4749999966,
+        "tokens": 4929,
+        "cost_usd": 0.000179,
+        "llm_calls": 4,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"learning budget per employee\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q42",
+        "type": "multi",
+        "question": "Where are Northwind's headquarters, and where was the March 2026 board meeting held?",
+        "answer": "Northwind\u2019s headquarters are in\u202fPune,\u202fIndia\u202f[S1]. The Board of Directors meeting on\u202f14\u202fMarch\u202f2026 was held at the\u202fPune headquarters\u202f[S8].",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer accurately conveys that the headquarters are in Pune, India, and the March 2026 board meeting was held there, which is fully supported by the cited passages.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.866,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p1",
+          "northwind_board_minutes_mar2026.pdf p1"
+        ],
+        "latency_ms": 21585.26089999941,
+        "tokens": 8614,
+        "cost_usd": 0.000309,
+        "llm_calls": 5,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"f4899bcb-4240-4652-9806-8d1a41477dae\"],\"query\":\"Northwind Analytics headquarters location\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"board meeting held location March 2026\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q43",
+        "type": "unanswerable",
+        "question": "What is Northwind's stock ticker symbol?",
+        "answer": "The provided sources do not contain Northwind\u2019s stock ticker symbol.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly declines to answer as the information is not in the documents, which aligns with the reference answer and requires no citations.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.035,
+        "verified": false,
+        "citations": [],
+        "latency_ms": 63625.022599997465,
+        "tokens": 11770,
+        "cost_usd": 0.000439,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\",\"3fe1c8d7-ba77-48a2-bd20-82935dedd262\"],\"query\":\"Northwind ticker symbol\"})"
+          ],
+          [
+            "search_documents({\"query\":\"ticker\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"1e9f260c-7768-409c-9190-cd7bad7c4598\",\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\",\"0e2a4b5f-63e5-4470-af9a-611b6184957b\",\"45541275-797e-4e39-a40e-adca88c64cd7\"],\"query\":\"stock\"})"
+          ],
+          [
+            "search_documents({\"query\":\"ticker symbol Northwind\"})"
+          ]
+        ]
+      },
+      {
+        "id": "q44",
+        "type": "unanswerable",
+        "question": "How much did Northwind spend on marketing in FY2025?",
+        "answer": "The sources do not provide Northwind\u2019s FY2025 marketing expenditure.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly declines to answer because the information is not in the documents, matching the reference, and declines are inherently grounded.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.035,
+        "verified": false,
+        "citations": [],
+        "latency_ms": 54659.01920000033,
+        "tokens": 11743,
+        "cost_usd": 0.000482,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"marketing expense FY2025\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"marketing\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"marketing expense\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"94ef48b0-fca2-461c-bce4-baa3c9bb874c\"],\"query\":\"marketing spend\"})"
+          ]
+        ]
+      },
+      {
+        "id": "q45",
+        "type": "unanswerable",
+        "question": "What is the company's policy on bringing pets to the office?",
+        "answer": "The provided sources do not contain any information about a policy on bringing pets to the office.",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system correctly declined to answer by stating the information is not in the sources, which matches the reference answer.",
+        "retrieval_hit": null,
+        "abstained": true,
+        "confidence": 0.035,
+        "verified": false,
+        "citations": [],
+        "latency_ms": 53114.48659999587,
+        "tokens": 10732,
+        "cost_usd": 0.00046,
+        "llm_calls": 6,
+        "tools": [
+          [
+            "search_documents({\"document_ids\":[\"2d46412b-c3c3-44af-8249-254713ea5740\"],\"query\":\"pets office policy\"})"
+          ],
+          [
+            "search_documents({\"document_ids\":[\"3fe1c8d7-ba77-48a2-bd20-82935dedd262\"],\"query\":\"pets office\"})"
+          ],
+          [
+            "search_documents({\"query\":\"pet policy office\"})"
+          ],
+          [
+            "search_documents({\"query\":\"pet\"})"
+          ]
+        ]
+      },
+      {
+        "id": "q46",
+        "type": "text",
+        "question": "Who is the CEO of Southwind Analytics?",
+        "answer": "Rahul\u202fMenon is the Chief Executive Officer of Southwind Analytics[S1]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly identifies Rahul Menon as the CEO, which matches the reference and is fully supported by the signature line in the cited passage.",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.848,
+        "verified": true,
+        "citations": [
+          "southwind_annual_report_fy2025.pdf p1"
+        ],
+        "latency_ms": 67518.86549999472,
+        "tokens": 1759,
+        "cost_usd": 0.00019,
+        "llm_calls": 2,
+        "tools": [
+          [
+            "search_documents({\"query\": \"Who is the CEO of Southwind Analytics?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      },
+      {
+        "id": "q47",
+        "type": "text",
+        "question": "What was Northwind's total revenue in FY2024?",
+        "answer": "Northwind\u2019s total revenue for FY\u202f2024 was **$409.0\u202fmillion**[S1][S2]",
+        "correct": true,
+        "judge_correct": true,
+        "grounded": true,
+        "judge_reason": "The system answer correctly states the revenue of $409.0 million, which matches the reference and is explicitly supported by the cited passages [S1] and [S2].",
+        "retrieval_hit": true,
+        "abstained": false,
+        "confidence": 0.859,
+        "verified": true,
+        "citations": [
+          "northwind_annual_report_fy2024.pdf p3",
+          "northwind_annual_report_fy2024.pdf p1"
+        ],
+        "latency_ms": 105665.03300001204,
+        "tokens": 2183,
+        "cost_usd": 0.00025,
+        "llm_calls": 2,
+        "tools": [
+          [
+            "search_documents({\"query\": \"What was Northwind's total revenue in FY2024?\"})"
+          ],
+          [
+            "done"
+          ]
+        ]
+      }
+    ]
+  },
+  "_meta": {
+    "judge_usage_this_run": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "calls": 0,
+      "by_model": {}
+    },
+    "llm_model": "groq/openai/gpt-oss-120b",
+    "judge_model": "groq/qwen/qwen3.8-27b"
+  }
+}

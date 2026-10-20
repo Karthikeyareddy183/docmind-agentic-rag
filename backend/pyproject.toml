@@ -1,0 +1,96 @@
+[project]
+name = "docmind"
+version = "0.1.0"
+description = "Agentic document analysis: RAG over PDFs and scans with verifiable citations"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.5",
+    "python-multipart>=0.0.9",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30",
+    "alembic>=1.14",
+    "pgvector>=0.3.6",
+    "pyjwt>=2.9",
+    "pwdlib[argon2]>=0.2.1",
+    "email-validator>=2.2",
+    "aiofiles>=24.1",
+    "filetype>=1.2",
+    "python-json-logger>=3.2",
+    "python-dotenv>=1.0",
+    "sse-starlette>=2.2",
+    "httpx>=0.27",
+    # MCP server (expose search / Q&A to Claude Desktop, Cursor, ...)
+    "mcp>=2.0",
+    # Document parsing (layout, tables, OCR) — CPU
+    "docling>=2.50",
+    "rapidocr>=3.0",
+    "onnxruntime>=1.20",
+    # Embeddings + reranking — CPU
+    "sentence-transformers>=5.0",
+    "tiktoken>=0.8",
+    # LLM gateway + agent
+    "litellm>=1.70",
+    "langgraph>=0.6",
+]
+
+[project.optional-dependencies]
+observability = ["langfuse>=3.0"]
+
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.27",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "types-aiofiles",
+    "python-dotenv>=1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docmind"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "ASYNC", "S", "RUF"]
+ignore = [
+    "B008",  # FastAPI Depends()/File() in defaults is idiomatic
+    "RUF001", "RUF002", "RUF003",  # intentional typographic characters (›, —, ×) in user-facing text
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106", "S107", "ASYNC240", "E501"]
+"src/docmind/agent/prompts.py" = ["E501"]  # natural-language prompt text
+"migrations/**" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+mypy_path = "src"
+packages = ["docmind"]
+
+[[tool.mypy.overrides]]
+module = ["pgvector.*", "filetype.*", "pypdfium2.*", "litellm.*", "sentence_transformers.*", "rapidocr.*", "docling.*", "docling_core.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+
+[[tool.mypy.overrides]]
+# docling-core re-exports its document types without __all__
+module = ["docling_core.*"]
+implicit_reexport = true
